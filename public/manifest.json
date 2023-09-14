@@ -1,0 +1,13 @@
+{
+  "name": "Sevo Wallet",
+  "version": "1.0.0",
+  "description": "Sevo Wallet: A secure home for your tokens, all in one convenient location ",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Sevo Wallet"
+  },
+  "permissions": [
+    "storage"
+  ]
+}
