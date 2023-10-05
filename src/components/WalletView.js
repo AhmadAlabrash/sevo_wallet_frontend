@@ -49,20 +49,26 @@ function WalletView({
   const items = [{
     key :"3" ,
     label : "Tokens" ,
-    children : (<>{tokens ? (
+    children : (<>{tokens ? 
+      
+      (
       <>
+      
         <List
           bordered
+         
           itemLayout="horizontal"
           dataSource={tokens}
           renderItem={(item, index) => (
-            <List.Item style={{ textAlign: "left" }}>
+            <List.Item style={{ textAlign: "left" , color:'white'  }}>
               <List.Item.Meta
-                avatar={<Avatar src={item.logo || logo} />}
-                title={item.symbol}
-                description={item.name}
+               
+                avatar={<Avatar   src={item.logo || logo} />}
+                title={<span style={{ color: "white" }}>{item.symbol}</span>}
+                
+                description={<span style={{ color: "white" }}>{item.name}</span>}
               />
-              <div>
+              <div > 
                 {(
                   Number(item.balance) /  10 ** Number(item.decimals)
                 
@@ -72,18 +78,16 @@ function WalletView({
             </List.Item>
           )}
         />
+     
       </>
     ) : (
       <>
-        <span>You seem to not have any tokens yet</span>
-        <p className="frontPageBottom">
-          Buy tokens directly from moonpay
-          <a
-            href="https://moonpay.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            moonpay
+        <span style={{color : 'white'}}>You seem to not have any tokens yet</span>
+        <p  className="frontPageBottom">
+        Buy tokens directly from sevo.fi
+          <a href="https://sevofi.vercel.app/" target="_blank" rel="noreferrer">
+          sevo.fi
+      
           </a>
         </p>
       </>
@@ -115,15 +119,11 @@ function WalletView({
       </>
     ) : (
       <>
-        <span>You seem to not have any NFTs yet</span>
+        <span style={{color:'white'}}>You seem to not have any NFTs yet</span>
         <p className="frontPageBottom">
-          Buy tokens directly by moonpay
-          <a
-            href="https://moonpay.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            moonpay
+        Buy tokens directly from sevo.fi
+          <a href="https://sevofi.vercel.app/" target="_blank" rel="noreferrer">
+          sevo.fi
           </a>
         </p>
       </>
@@ -136,11 +136,11 @@ function WalletView({
     key :"1" ,
     label : "Transfer" ,
     children : (      <>
-      <h3>Native Balance </h3>
-      <h1>
+      <h3 style={{color:'white'}}>Native Balance </h3>
+      <h1 style={{color:'white'}}>
         {balance.toFixed(2)} {CHAINS_CONFIG[selectedChain].ticker}
       </h1>
-      <div className="sendRow">
+      <div style={{color:'white'}} className="sendRow">
         <p style={{ width: "90px", textAlign: "left" }}> To:</p>
         <Input
           value={sendToAddress}
@@ -148,7 +148,7 @@ function WalletView({
           placeholder="0x..."
         />
       </div>
-      <div className="sendRow">
+      <div style={{color:'white'}} className="sendRow">
         <p style={{ width: "90px", textAlign: "left" }}> Amount:</p>
         <Input
           value={amountToSend}
@@ -159,7 +159,7 @@ function WalletView({
       <Button
            
 
-        style={{ backgroundColor: "#582b5c" ,width: "100%", marginTop: "20px", marginBottom: "20px" }}
+        style={{ backgroundColor: "#21273a" ,width: "100%", marginTop: "20px", marginBottom: "20px" }}
         type="primary"
         onClick={() => sendTransaction(sendToAddress, amountToSend)}
       >
@@ -170,7 +170,7 @@ function WalletView({
           <Spin />
           {hash && (
             <Tooltip title={hash}>
-              <p>Hover For Tx Hash</p>
+              <p style={{color:'white'}}>Hover For Tx Hash</p>
             </Tooltip>
           )}
         </>
@@ -281,6 +281,7 @@ function WalletView({
         </Tooltip>
         <Divider />
         <Divider />
+
         {fetching ? (
           <Spin />
         ) : (

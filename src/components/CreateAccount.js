@@ -15,6 +15,9 @@ function CreateAccount( {setSeedPhrase , setWallet}) {
   }
 
   function storeSeedandWallet() {
+    if(!newSeedPhrase){
+      return;
+    }
     setSeedPhrase(newSeedPhrase);
     setWallet(ethers.Wallet.fromPhrase(newSeedPhrase).address)
 
@@ -31,7 +34,8 @@ function CreateAccount( {setSeedPhrase , setWallet}) {
         </div>
       </div>
       <Button 
-      style={{ backgroundColor: "#582b5c" }}
+      style={{ backgroundColor: "#21273a" }}
+      
        onClick={()=> generateSeed( )}
        className="frontPageButton" type="primary">Generate Seed Phrase</Button>
       <Card className="seedPhraseContainer">

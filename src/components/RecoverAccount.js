@@ -51,6 +51,7 @@ function RecoverAccount({setSeedPhrase , setWallet}) {
         />
 
        <Button
+          style={{backgroundColor: "#21273a"  , color :'white'}}
           disabled={typedSeed.split(" ").length !== 12 || typedSeed.slice(-1) === " "}
           className="frontPageButton"
           type="primary"

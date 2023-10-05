@@ -6,6 +6,14 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  background-color: rgb(25, 33, 52) !important;
+  background: rgb(25, 33, 52);
+  background: linear-gradient(
+    180deg,
+    #192134 20%,
+    #070815 75%
+  );
+  color: white;
 
 }
 
@@ -16,9 +24,37 @@
 .frontPageButton {
   width: 90%;
   margin-top: 20px;
+  
+
+}
+
+.frontPageButton:hover {
+  background-color: #ffffff ;
+  
+}
+
+.headerItem {
+  padding: 8px;
+ 
+  border-radius: 5px;
+  font-weight: 500;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  background-color: #222a3a;
+  color: white;
+
+}
+
+.eth{
+  width: 20px;
+  height: 20px;
+  padding-right: 10px;
+
 }
 
 .frontPageBottom {
+  color: white;
   align-items: flex-end;
   display: flex;
   height: 100%;
@@ -28,30 +64,100 @@
   gap: 5px;
 }
 
+.tokenLogo {
+  height: 40px;
+  width: 40px;
+}
+
+
+.tokenChoice {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.tokenChoice:hover {
+  cursor: pointer;
+  background-color: #1f2639;
+}
+
+.tokenName {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.tokenTicker {
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: 300;
+  color: #51596f;
+}
+
+.modalContent {
+  border-top: 1px solid #363e54;
+  /* padding-top: 20px; */
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.ant-modal {
+  position: absolute;
+  top: 64px;
+  left: 34px;
+  background-color: white;
+  border: 1px solid #363e54;
+  width: 270px !important;
+  height: 200px;
+  border-radius: 10px;
+  
+  
+}
+
+.ant-modal-header {
+  background-color: #ffffff !important;
+  color: #070815;
+}
+
+.ant-modal-title {
+  color: #070815 !important;
+  padding-top: 5px !important;
+  margin-left: 5px !important;
+}
+
+.ant-modal-close-icon {
+  color: #363e54 !important;
+  transition: 0.3s;
+}
+
+.ant-modal-close-icon:hover {
+  color: black !important;
+}
+
 .frontPageBottom:hover {
   cursor: pointer;
-  color: #582b5c;
+  color: #21273a;
 }
 
 h2 {
   font-size: 40px;
   margin-bottom: 5px;
-  color: rgb(46, 46, 46);
 }
 
 .h4 {
-  color: rgb(46, 46, 46);
   padding-bottom: 50px;
 }
 
-a:visited {
-  color: #582b5c;
-}
+
 
 header {
   width: 100%;
   height: 80px;
-  background-color: #582b5c;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -117,7 +223,6 @@ header {
 }
 
 .logoutButton:hover {
-  background-color: rgba(0, 0, 0, 0.036);
   cursor: pointer;
 }
 
