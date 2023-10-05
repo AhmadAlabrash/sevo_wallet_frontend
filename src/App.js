@@ -49,37 +49,34 @@ function App() {
     <div className="App" >
       <header style={{paddingRight : '10px'}}>
        <img src={logo} className="headerLogo" alt="logo"/>
-
-
-{selectedChain === '0x89' ? (
-    <div className="headerItem" onClick={() => setIsOpen(true)}>
-      <img src={POL} alt="pol" className="eth" /> Polygon
-    </div>
-  ) : selectedChain === '0x1' ? (
-    <div  className="headerItem" onClick={() => setIsOpen(true)}>
-      <img src={ETH} alt="ETH" className="eth" /> Ethereum
-    </div>
-  )  : selectedChain === '0xa86a' ? (
-    <div className="headerItem" onClick={() => setIsOpen(true)}>
-      <img src={AVA} alt="Avalanche" className="eth" /> Avalanche
-    </div>
-  ) : selectedChain === '0x38' ? (
-    <div className="headerItem" onClick={() => setIsOpen(true)}>
-      <img src={BNB} alt="bnb" className="eth" /> Binance Chain
-    </div>
-  )  : selectedChain === '0xa' ? (
-    <div className="headerItem" onClick={() => setIsOpen(true)}>
-      <img src={OPT} alt="Optimiusm" className="eth" /> OP Mainnet
-    </div>
-  )  : selectedChain === '0xa4b1' ? (
-    <div className="headerItem" onClick={() => setIsOpen(true)}>
-      <img src={ARB} alt="Arbitrum" className="eth"   /> Arbitrum
-    </div>
-  ) : (
-    <div className="headerItem" onClick={() => setIsOpen(true)} >
-      <img src={POL} alt="Mumbai network" className="eth" /> Mumbai
-    </div>
-  )} 
+       <Select
+          
+          onChange={(val) => setSelectedChain(val)}
+          value={selectedChain}
+          options={[
+            {
+              label: "Ethereum",
+              value: "0x1",
+            },
+            {
+              label: "Mumbai Testnet",
+              value: "0x13881",
+            },
+            {
+              label: "Polygon",
+              value: "0x89",
+            },
+            {
+              label: "Avalanche",
+              value: "0xa86a",
+            },
+          ]}
+          className="dropdown"
+          styles={{
+            control: () => ({
+              backgroundColor: "#e4ace3", // Set the background color to black
+            }) }}
+        ></Select>
       </header>
 
       <Modal
