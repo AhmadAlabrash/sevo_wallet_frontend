@@ -35,7 +35,7 @@
 
 .headerItem {
   padding: 8px;
- 
+  cursor: pointer; 
   border-radius: 5px;
   font-weight: 500;
   transition: 0.3s;
